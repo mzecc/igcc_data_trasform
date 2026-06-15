@@ -43,6 +43,7 @@ import math
 import shutil
 from typing import Any
 import xarray as xr
+import yaml
 
 import pyam
 
@@ -107,18 +108,18 @@ file_map = {
 # ## Download from https://github.com/ClimateIndicator/data
 
 # %%
-# repo_url = "https://github.com/ClimateIndicator/data.git"
-# target_dir = "../data"
+repo_url = "https://github.com/ClimateIndicator/data.git"
+target_dir = "../data"
 
-# def update_repo():
-#     if os.path.isdir(os.path.join(target_dir, ".git")):
-#         # Repo exists → pull updates
-#         subprocess.run(["git", "-C", target_dir, "pull"], check=True)
-#     else:
-#         # Repo doesn't exist → clone it
-#         subprocess.run(["git", "clone", repo_url, target_dir], check=True)
+def update_repo():
+    if os.path.isdir(os.path.join(target_dir, ".git")):
+        # Repo exists → pull updates
+        subprocess.run(["git", "-C", target_dir, "pull"], check=True)
+    else:
+        # Repo doesn't exist → clone it
+        subprocess.run(["git", "clone", repo_url, target_dir], check=True)
 
-# update_repo()
+update_repo()
 
 # %% [markdown]
 # ## Set up
