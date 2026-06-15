@@ -1,5 +1,5 @@
 # folders
 data/
-
+src/.ipynb_checkpoints
 #files
 *.nc
