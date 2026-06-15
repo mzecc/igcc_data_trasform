@@ -5,7 +5,7 @@
 #       extension: .py
 #       format_name: percent
 #       format_version: '1.3'
-#       jupytext_version: 1.19.1
+#       jupytext_version: 1.19.3
 #   kernelspec:
 #     display_name: Python 3 (ipykernel)
 #     language: python
@@ -32,6 +32,7 @@ from pathlib import Path
 from gcages.renaming import convert_variable_name
 from pandas_openscm.io import load_timeseries_csv
 from pandas_openscm.index_manipulation import update_index_levels_func
+
 import subprocess
 from enum import StrEnum
 import os
@@ -40,6 +41,8 @@ from datetime import datetime, timezone
 from uuid import uuid4
 import math
 import shutil
+from typing import Any
+import xarray as xr
 
 import pyam
 
@@ -1043,7 +1046,7 @@ def process_anthropogenic(df: pd.DataFrame, df_time_in_days: pd.DataFrame)->xr.D
 
     return ds
 
-def process_headers(file_path:Path, general:dict, specific:dict, ref_year: int)->xr.DataArray:
+def process_headers(file_path:Path, general:dict, specific:dict, ref_year: int)->xr.Dataset:
 
     name = file_path.stem
     
@@ -1189,7 +1192,7 @@ def process_headers(file_path:Path, general:dict, specific:dict, ref_year: int)-
 
     return ds
 
-def process_carbon_budget(file_path:Path)->xr.array():
+def process_carbon_budget(file_path:Path)->xr.Dataset():
 
     path_list = [file_path,
                 file_path.parent / "budget_normal_magicc_True_fair_False_esf_7.1pm26.7_likeli_0.6827_nonCO2pc50.0_GtCO2_permaf_False_zecsd_0.0_asym_False_hdT_1.26NonlinNonCO2_all_None_recEm213.csv",
