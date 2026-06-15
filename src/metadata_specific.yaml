@@ -1,0 +1,2003 @@
+files:
+
+######################################
+  anthropogenic_warming/Assessment-Extrapolation-2026_GMST_headlines.csv:
+    description:
+      title: Headlines
+      summary: >
+        "SUmmary"
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      # type: igcc-assessment
+
+    dimensions:
+      - compound_emitted
+      - forcing_agent
+      - percentile
+
+    coordinate_description:
+      definition:
+        long_name: Calculation definition
+        coverage_content_type: 'coordinate'
+        comment: Method of calculation is Annual, AR6, SR1.5
+
+      component:
+        long_name: Headline temperature component
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
+
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      GMST:
+        standard_name: surface_temperature_anomaly
+        long_name: Global mean surface temperature relative to 1850-1900  
+        units: "degC"
+        units_metadata: "temperature: difference"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+          ######
+  anthropogenic_warming/Assessment-Update-2025_GMST_headlines.csv:
+    description:
+      title: Headlines
+      summary: >
+        "SUmmary"
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      # type: igcc-assessment
+
+    dimensions:
+      - compound_emitted
+      - forcing_agent
+      - percentile
+
+    coordinate_description:
+      definition:
+        long_name: Calculation definition
+        coverage_content_type: 'coordinate'
+        comment: Method of calculation is Annual, AR6, SR1.5
+
+      component:
+        long_name: Headline temperature component
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
+
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      GMST:
+        standard_name: surface_temperature_anomaly
+        long_name: Global mean surface temperature relative to 1850-1900  
+        units: "degC"
+        units_metadata: "temperature: difference"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+          ######
+  anthropogenic_warming/Gillett_GMST_headlines.csv:
+    description:
+      title: Headlines
+      summary: >
+        "SUmmary"
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      # type: igcc-assessment
+
+    dimensions:
+      - definition
+      - component
+      - percentile
+
+    # TODO default for coordinate description
+    coordinate_description:
+      definition:
+        long_name: Calculation definition
+        coverage_content_type: 'coordinate'
+        comment: Method of calculation is Annual, AR6, SR1.5
+
+      component:
+        long_name: Headline temperature component
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
+
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      GMST:
+        standard_name: surface_temperature_anomaly
+        long_name: Global mean surface temperature relative to 1850-1900  
+        units: "degC"
+        units_metadata: "temperature: difference"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+      GSAT:
+        standard_name: air_temperature
+        long_name: Global mean surface air temperature relative to 1850-1900  
+        units: "degC"
+        units_metadata: "temperature: difference"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+          #######
+  anthropogenic_warming/Gillett_GMST_timeseries.csv:
+    description:
+      title: Contributions to Global Mean Surface Temperature Change
+      summary: >
+        Time series of contributions to global surface temperature change relative to
+        1850–1900, including anthropogenic, natural, greenhouse gas and other human
+        forcing components, expressed as uncertainty percentiles
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - percentile
+      - time
+
+    coordinate_description:
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      anthropogenic:
+          standard_name: surface_temperature_anomaly
+          # TODO repeat relative to 1850-1900 here as well
+          long_name: Anthropogenic contribution to global surface temperature change relative to 1850-1900
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+            
+      natural:
+          standard_name: surface_temperature_anomaly
+          long_name: Natural contribution to global surface temperature change
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+      ghg:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution to global surface temperature change from well-mixed greenhouse gases
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+          comment: >
+           Contribution to global surface temperature change from other anthropogenic forcings consisting of CO2, CH4, N2O and F-gases 
+
+      other_human_forcing:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution to global surface temperature change from other anthropogenic forcings
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+          comment: >
+           Contribution to global surface temperature change from other anthropogenic forcings consisting of 
+           aerosol–radiation interaction, aerosol–cloud interaction, black carbon on snow, contrails, ozone, stratospheric H2O and land use
+          #######
+  anthropogenic_warming/Gillett_GMST_rates.csv:
+    description:
+      title: Rate of Human-Induced Global Warming
+      summary: >
+        Time series of the rate of anthropogenic global surface temperature change expressed as annualised decadal trends derived from attribution methods.
+
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      time_coverage_resolution: P10Y
+
+    dimensions:
+      - percentile
+      - time
+
+    coordinate_description:
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      anthropogenic:
+          long_name: long_name to set
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+          #######
+  anthropogenic_warming/Ribes_GMST_headlines.csv:
+    description:
+      title: Headlines
+      summary: >
+        "SUmmary"
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      # type: igcc-assessment
+
+    dimensions:
+      - compound_emitted
+      - forcing_agent
+      - percentile
+
+    coordinate_description:
+      definition:
+        long_name: Calculation definition
+        coverage_content_type: 'coordinate'
+        comment: Method of calculation is Annual, AR6, SR1.5
+
+      component:
+        long_name: Headline temperature component
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
+
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      GMST:
+        standard_name: surface_temperature_anomaly
+        long_name: Global mean surface temperature relative to 1850-1900  
+        units: "degC"
+        units_metadata: "temperature: difference"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+          #######
+  anthropogenic_warming/Ribes_GMST_timeseries.csv:
+    description:
+      title: Contributions to Global Mean Surface Temperature Change
+      summary: >
+        Time series of contributions to global surface temperature change relative to
+        1850–1900, including anthropogenic, natural, greenhouse gas and other human
+        forcing components, expressed as uncertainty percentiles
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - percentile
+      - time
+
+    coordinate_description:
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      anthropogenic:
+          standard_name: surface_temperature_anomaly
+          long_name: Anthropogenic contribution to global surface temperature change
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+            
+      natural:
+          standard_name: surface_temperature_anomaly
+          long_name: Natural contribution to global surface temperature change
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+      ghg:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution to global surface temperature change from well-mixed greenhouse gases 
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+          comment: >
+           Contribution to global surface temperature change from other anthropogenic forcings consisting of CO2, CH4, N2O and F-gases relative to 1850–1900
+
+      other_human_forcing:
+          standard_name: surface_temperature_anomaly
+          long_name: Global mean surface temperature change attributable to other human forcings 
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+          comment: >
+           Contribution to global surface temperature change from other anthropogenic forcings consisting of 
+           aerosol–radiation interaction, aerosol–cloud interaction, black carbon on snow, contrails, ozone, stratospheric H₂O and land use
+           relative to 1850-1900
+            
+      total:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution to global surface temperature change from total 
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+          comment: >
+            Total global surface temperature change including both anthropogenic and natural contributions.
+          #######
+  anthropogenic_warming/Ribes_GMST_rates.csv:
+    description: 
+      title: TITLE
+      summary: "summary"
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      time_coverage_resolution: P10Y
+
+    dimensions:
+      - percentile
+      - time
+
+    coordinate_description:
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      anthropogenic:
+          long_name: Anthropogenic (TODO ADDD)
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+            
+      natural:
+          long_name: Natural (TODO ADDD)
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+      ghg:
+          long_name: adfsf (TODO ADDD)
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+      other_human_forcing:
+          long_name: adf (TODO ADDD)
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+            
+      total:
+          long_name: asdfa (TODO ADDD)
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+          #######
+  anthropogenic_warming/Walsh_GMST_headlines.csv:
+    description:
+      title: Headlines
+      summary: >
+        "SUmmary"
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      # type: igcc-assessment
+
+    dimensions:
+      - compound_emitted
+      - forcing_agent
+      - percentile
+
+    coordinate_description:
+      definition:
+        long_name: Calculation definition
+        coverage_content_type: 'coordinate'
+        comment: Method of calculation is Annual, AR6, SR1.5
+
+      component:
+        long_name: Headline temperature component
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
+
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      GMST:
+        standard_name: surface_temperature_anomaly
+        long_name: Global mean surface temperature relative to 1850-1900  
+        units: "degC"
+        units_metadata: "temperature: difference"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+          ######
+  anthropogenic_warming/Walsh_GMST_timeseries.csv:
+    description:
+      title: Contributions to Global Mean Surface Temperature Change
+      summary: >
+        Time series of contributions to global surface temperature change relative to
+        1850–1900, including anthropogenic, natural, greenhouse gas and other human
+        forcing components, expressed as uncertainty percentiles
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - percentile
+      - time
+
+    coordinate_description:
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      anthropogenic:
+          standard_name: surface_temperature_anomaly
+          long_name: Anthropogenic contribution to global surface temperature change
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+            
+      natural:
+          standard_name: surface_temperature_anomaly
+          long_name: Natural contribution to global surface temperature change
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+      ghg:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution to global surface temperature change from well-mixed greenhouse gases 
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+          comment: >
+           Contribution to global surface temperature change from other anthropogenic forcings consisting of CO2, CH4, N2O and F-gases relative to 1850–1900
+
+      residual:
+          standard_name: surface_temperature_anomaly
+          long_name: Residual contribution to global mean surface temperature change 
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+      other_human_forcing:
+          standard_name: surface_temperature_anomaly
+          long_name: Global mean surface temperature change attributable to other human forcings 
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+          comment: >
+           Contribution to global surface temperature change from other anthropogenic forcings consisting of 
+           aerosol–radiation interaction, aerosol–cloud interaction, black carbon on snow, contrails, ozone, stratospheric H₂O and land use
+           relative to 1850-1900
+            
+      total:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution to global surface temperature change from total 
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+          comment: >
+            Total global surface temperature change including both anthropogenic and natural contributions.
+
+      co2:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from carbon dioxide
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      ch4:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from methane
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      n2o:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from nitrous oxide
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      halogen:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from halogenated gases
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      aerosol_cloud_interactions:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from aerosol-cloud interactions
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      aerosol_radiation_interactions:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from aerosol-radiation interactions
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      bc_snow:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from black carbon on snow and ice
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      land_use:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from land-use changes
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      contrails:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from contrails and contrail-induced cirrus
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      o3:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from ozone
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      h2o_strat:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from stratospheric water vapour
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      solar:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from solar variability
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      volcanic:
+          standard_name: surface_temperature_anomaly
+          long_name: Contribution from volcanic forcing
+          units: "degC"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+          #######
+  anthropogenic_warming/Walsh_GMST_rates.csv:
+    description:
+      title: TITLE
+      summary: >
+        SUMMARY
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      time_coverage_resolution: P10Y
+
+    dimensions:
+      - percentile
+      - time
+
+    coordinate_description:
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      anthropogenic:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+            
+      natural:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+      ghg:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+      residual:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+
+      other_human_forcing:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      total:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      co2:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      ch4:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      n2o:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      halogen:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      aerosol_cloud_interactions:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      aerosol_radiation_interactions:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      bc_snow:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      land_use:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      contrails:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      o3:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      h2o_strat:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      solar:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+      volcanic:
+          long_name: TODO
+          units: "degC yr-1"
+          units_metadata: "temperature: difference"
+          cell_methods: "area: time: mean"
+          coverage_content_type: "modelResult"
+          #######
+  anthropogenic_warming/assessment_6thIPCC_headlines.csv:
+    description:
+      title: Headlines
+      summary: >
+        "SUmmary"
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      # type: igcc-assessment
+
+    dimensions:
+      - compound_emitted
+      - forcing_agent
+      - percentile
+
+    coordinate_description:
+      definition:
+        long_name: Calculation definition
+        coverage_content_type: 'coordinate'
+        comment: Method of calculation is Annual, AR6
+
+      component:
+        long_name: Headline temperature component
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
+
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
+
+    variable:
+      GMST:
+        standard_name: surface_temperature_anomaly
+        long_name: Global mean surface temperature relative to 1850-1900  
+        units: "degC"
+        units_metadata: "temperature: difference"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+          ######
+######################################
+  anthropogenic_warming_by_species/ERF_relative_to_1750.csv:
+    description:
+      title: ERF_relative_to_1750
+      summary: >
+        "SUmmary"
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      type: igcc-assessment
+
+    dimensions:
+      - compound_emitted
+      - forcing_agent
+      - percentile
+
+    current_year: # The time coordinate is not in the csv file. We explicitly set it here.
+      2025
+
+    variable:
+      erf_total:
+        long_name:  "Total effective radiative forcing"
+        units: W m-2
+        comment: "Percentiles of the total forcing response for the emitted compound."
+      erf_by_mechanism:
+        long_name: "Median effective radiative forcing contribution" 
+        units: W m-2
+        comment: "Median contribution of each forcing component to the total forcing response of the emitted compound." 
+          #######
+  anthropogenic_warming_by_species/temperature_relative_to_1750.csv:
+    description:
+      title: Temperature relative to 1750
+      summary: >
+        "SUmmary"
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      type: input-datasets
+      product: ch7
+      aggregation: table
+
+    dimensions:
+      - compound_emitted
+      - forcing_agent
+      - percentile
+
+    current_year: # The time coordinate is not in the csv file. We explicitly set it here.
+      2025
+
+    variable:
+      temperature_total:
+        standard_name: "air_temperature"
+        long_name: "Attribution of 2025 surface air temperature anomaly relative to 1750"
+        units: "degC"
+        units_metadata: "temperature: difference"
+        cell_methods: "time: mean"
+        comment: "comment"
+        coverage_content_type: "modelResult"
+
+      temperature_by_mechanism:
+        standard_name: "air_temperature"
+        long_name: "Attribution of 2025 surface air temperature anomaly relative to 1750"
+        units: "degC"
+        units_metadata: "temperature: difference"
+        cell_methods: "time: mean"
+        comment: "comment"
+        coverage_content_type: "modelResult"
+
+######################################
+  carbon_budget/budget_normal_magicc_True_fair_False_esf_7.1pm26.7_likeli_0.6827_nonCO2pc50.0_GtCO2_permaf_False_zecsd_0.0_asym_False_hdT_1.24NonlinNonCO2_all_None_recEm213.csv:
+    description:
+      title: Headlines
+      summary: >
+        "Reference year ~2023 (213 GtCO2 recent emissions)"
+      keywords: "KEYWORDSSS"
+      source: >
+        "SOURCES"
+      references: >
+        "references"
+      region: global
+      # type: igcc-assessment
+
+    dimensions:
+      - parameters
+      - dT_targets
+      - likelihood
+
+    coordinate_description:
+      parameters:
+        long_name: Run parameters combination
+        coverage_content_type: 'coordinate'
+        comment: Run parameters combination comprising simple climate model run, basis dt value, and zecsd value 
+
+      dT_targets:
+        long_name: Calculation definition
+        coverage_content_type: 'coordinate'
+        comment: Method of calculation is Annual, AR6, SR1.5
+
+      likelihood:
+        long_name: Headline temperature component
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
+
+    variable:
+      remaining_carbon_budget:
+        long_name: remaining_carbon_budget
+        units: "GtCO2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      future_warming:
+        standard_name: air_temperature
+        long_name: future_warming
+        units: degC
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+######################################
+  earth_energy_imbalance/earth_energy_imbalance.csv:
+    description:
+      title: Earth Energy Imbalance and Earth Heat Inventory
+      summary: >
+        Time series of Earth Energy Imbalance (EEI) and associated Earth heat inventory
+        components, based on observational datasets and consistent with IPCC AR6 methodology.
+      keywords: Earth energy imbalance, EEI, ocean heat content, radiative flux, climate change
+      source: >
+        Ocean heat content datasets; GCOS Earth heat inventory components; AR6 methodology;
+        CERES satellite observations (for comparison)
+      # TODO check what references is meant to be
+      references: >
+        Forster et al. (2021, 2023, 2024, 2025); von Schuckmann et al. (2020, 2023);
+        Cheng et al. (2019, 2022); Loeb et al. (2021, 2024)
+      region: global
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - time
+
+    variable:
+      atmosphere:
+        long_name: Atmospheric heat content change
+        #TODO: Thristram says ZJ/yr
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coordinates: time
+        coverage_content_type: "modelResult"
+
+      cryosphere:
+        long_name: Cryosphere heat uptake (latent heat of ice melt)
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coverage_content_type: "modelResult"
+
+      land:
+        long_name: Continental land heat uptake
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coverage_content_type: "modelResult"
+
+      ocean_0_700m:
+        long_name: Ocean heat content change in 0–700 m layer
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coverage_content_type: "modelResult"
+        ancillary_variables: "ocean_0_700m_error"
+
+      ocean_0_700m_error:
+        long_name: Uncertainty in ocean heat content change (0–700 m)
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coverage_content_type: "modelResult"
+
+      ocean_700_2000m:
+        long_name: Ocean heat content change in 700–2000 m layer
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coverage_content_type: "modelResult"
+        ancillary_variables: "ocean_700_2000m_error"
+
+      ocean_700_2000m_error:
+        long_name: Uncertainty in ocean heat content change (700–2000 m)
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coverage_content_type: "modelResult"
+
+      ocean_2000_6000m:
+        long_name: Ocean heat content change in 2000–6000 m layer
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coverage_content_type: "modelResult"
+        ancillary_variables: "ocean_2000_6000m_error"
+
+      ocean_2000_6000m_error:
+        long_name: Uncertainty in ocean heat content change (2000–6000 m)
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coverage_content_type: "modelResult"
+
+      ocean_full_depth:
+        long_name: Total ocean heat content change (full depth)
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coverage_content_type: "modelResult"
+        ancillary_variables: "ocean_full_depth_error"
+        comment: >
+          Sum of ocean heat content changes across all depth layers.
+
+      ocean_full_depth_error:
+        long_name: Uncertainty in total ocean heat content change
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coverage_content_type: "modelResult"
+
+      total:
+        long_name: Total Earth system heat uptake
+        units: ZJ
+        cell_methods: "area: time: sum"
+        coverage_content_type: "modelResult"
+        comment: >
+          Total heat content change of the Earth system, computed as the sum of
+          ocean, land, atmosphere, and cryosphere contributions.
+
+######################################
+  effective_radiative_forcing/ERF_best.csv:
+    description:
+      title: Effective Radiative Forcing Time Series relative to 1750
+      summary: >
+        Time series of effective radiative forcing (ERF) from anthropogenic and natural
+        drivers relative to 1750, based on IPCC AR6 methodology and updated datasets.
+      keywords: radiative forcing, ERF, greenhouse gases, aerosols, climate forcing
+      source: >
+        AR6-based methodology; updated greenhouse gas concentrations; aerosol datasets;
+        solar forcing datasets
+      references: >
+        Forster et al. (2021, 2025); Smith et al. (2021);
+        Szopa et al. (2021); Gulev et al. (2021)
+      comment: >
+        ERF represents the net change in Earth's energy budget due to external forcing
+        agents. Positive values indicate a warming influence, while negative values
+        indicate cooling.
+      region: global
+      time_coverage_resolution: P1Y
+      reference_period: 1750
+
+    dimensions:
+      - time
+
+    variable:
+      # Aggregated
+      total:
+        # TODO: check standard_name
+        # standard_name: toa_net_downward_radiative_flux
+        long_name: Total effective radiative forcing relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+        comment: >
+          Computed as the aggregated sum of anthropogenic, solar, and volcanic forcing contributions relative to 1750
+
+      anthro:
+        long_name: Total anthropogenic effective radiative forcing relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+        comment: >
+          Computed as the aggregated sum of all anthropogenic forcing agents, i.e.
+          CO2, Non-CO2 (Halogenated gases, N20 and CH4), O3, Aerosols and Minor relative to 1750
+
+      nonco2wmghg:
+        long_name: Effective radiative forcing from non-CO2 well-mixed greenhouse gases relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+        comment: >
+          Computed as the aggregated sum of CH4, N2O, and halogenated gases relative to 1750
+
+      minor:
+        long_name: Effective radiative forcing from minor components relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+        comment: >
+          Computed as the aggregated sum of Land Use, Contrails, Stratospheric H2O, BC Snow relative to 1750
+
+      halogen:
+        long_name: Effective radiative forcing from halogenated greenhouse gases relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+        comment: >
+          Computed as the aggregated sum of CFCs, HCFCs, HFCs, PFCs, and halogenated gases relative to 1750
+
+      aerosol:
+        long_name: Total aerosol effective radiative forcing relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+        comment: >
+          Computed as the aggregated sum of aerosol-radiation and aerosol-cloud interaction forcing components relative to 1750
+
+      # Natural forcings
+      solar:
+        long_name: Effective radiative forcing from solar irradiance relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      volcanic:
+        long_name: Effective radiative forcing from volcanic aerosols relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      # Aerosols and related effects
+      aerosol-radiation_interactions:
+        long_name: Effective radiative forcing from aerosol-radiation interactions relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      aerosol-cloud_interactions:
+        long_name: Effective radiative forcing from aerosol-cloud interactions relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      BC_on_snow:
+        long_name: Effective radiative forcing from black carbon on snow and ice relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      # Land and aviation
+      land_use:
+        long_name: Effective radiative forcing from land-use changes relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      contrails:
+        long_name: Effective radiative forcing from contrails and contrail-induced cirrus relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      # Major greenhouse gases
+      CO2:
+        long_name: Effective radiative forcing from carbon dioxide relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      CH4:
+        long_name: Effective radiative forcing from methane relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      N2O:
+        long_name: Effective radiative forcing from nitrous oxide relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      # Ozone and stratospheric water vapour
+      O3:
+        long_name: Effective radiative forcing from ozone relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      H2O_stratospheric:
+        long_name: Effective radiative forcing from stratospheric water vapour relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      # Halogenated gases
+
+      HFC_134a: {long_name: ERF from HFC-134a relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_23: {long_name: ERF from HFC-23 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_32: {long_name: ERF from HFC-32 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_125: {long_name: ERF from HFC-125 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_143a: {long_name: ERF from HFC-143a relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_152a: {long_name: ERF from HFC-152a relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_227ea: {long_name: ERF from HFC-227ea relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_236fa: {long_name: ERF from HFC-236fa relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_245fa: {long_name: ERF from HFC-245fa relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_365mfc: {long_name: ERF from HFC-365mfc relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_43_10mee: {long_name: ERF from HFC-43-10mee relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+      NF3: {long_name: ERF from nitrogen trifluoride relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      SF6:
+        long_name: Effective radiative forcing from sulfur hexafluoride relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      SO2F2: {long_name: ERF from sulfuryl fluoride relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+      CF4:
+        long_name: Effective radiative forcing from carbon tetrafluoride relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      C2F6: {long_name: ERF from hexafluoroethane relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      C3F8: {long_name: ERF from octafluoropropane relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      c_C4F8: {long_name: ERF from cyclo-C4F8 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+      n_C4F10: {long_name: ERF from decafluorobutane relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      n_C5F12: {long_name: ERF from dodecafluoropentane relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      n_C6F14: {long_name: ERF from tetradecafluorohexane relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      i_C6F14: {long_name: ERF from iso-C6F14 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      C7F16: {long_name: ERF from perfluoroheptane relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      C8F18: {long_name: ERF from perfluorooctane relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      # CFCs & HCFCs
+      CFC_11: {long_name: ERF from CFC-11 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_12: {long_name: ERF from CFC-12 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_113: {long_name: ERF from CFC-113 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_114: {long_name: ERF from CFC-114 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_115: {long_name: ERF from CFC-115 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_13: {long_name: ERF from CFC-13 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_112: {long_name: ERF from CFC-112 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_112a: {long_name: ERF from CFC-112a relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_113a: {long_name: ERF from CFC-113a relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_114a: {long_name: ERF from CFC-114a relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+      HCFC_22: {long_name: ERF from HCFC-22 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HCFC_141b: {long_name: ERF from HCFC-141b relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HCFC_142b: {long_name: ERF from HCFC-142b relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HCFC_133a: {long_name: ERF from HCFC-133a relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HCFC_31: {long_name: ERF from HCFC-31 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HCFC_124: {long_name: ERF from HCFC-124 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+      # Other halogenated species
+      CH3CCl3: {long_name: ERF from methyl chloroform relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CCl4: {long_name: ERF from carbon tetrachloride relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CH3Cl: {long_name: ERF from methyl chloride relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CH3Br: {long_name: ERF from methyl bromide relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CH2Cl2: {long_name: ERF from dichloromethane relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CHCl3: {long_name: ERF from chloroform relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+      Halon_1211: {long_name: ERF from Halon-1211 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      Halon_1301: {long_name: ERF from Halon-1301 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      Halon_2402: {long_name: ERF from Halon-2402 relative to 1750, units: "W m-2", cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+    
+######################################
+  extreme_temperatures/txx_timeseries.csv:
+    description:
+      title: "Global Land Annual Maximum Temperature Anomalies relative to 1961–1990"
+      summary: > 
+        Annual anomalies of the maximum daily maximum near-surface air temperature (TXx) averaged over land (excluding Antarctica),
+        based on HadEX3, Berkeley Earth, and ERA5 datasets.
+      keywords: "temperature extremes, TXx, climate change, heat extremes, land temperature"
+      source: "HadEX3 (Dunn et al., 2020); Berkeley Earth; ERA5 (Hersbach et al., 2020)"
+      references: "Seneviratne et al. (2021); Forster et al. (2023, 2024, 2025); Dunn et al. (2020); Rohde et al. (2013); Hersbach et al. (2020); Wild et al. (2005)"
+      comment: >
+        TXx anomalies calculated relative to 1961–1990 baseline with an offset of 0.51 K applied to approximate 1850–1900 reference period. 
+        Differences among datasets reflect varying spatial coverage, completeness, and methodology.
+      time_coverage_resolution: P1Y
+      type: input-datasets
+
+    dimensions:
+      - dataset
+      - time
+
+    variable:
+      txx_extreme_temperature:
+        standard_name: "air_temperature"
+        long_name: "Annual maximum of daily maximum near-surface air temperature (TXx) anomaly over land relative to 1961–1990"
+        units: "degC"
+        units_metadata: "temperature: difference"
+        cell_methods: "time: maximum within years time: mean (annual)"
+        comment: "TXx defined as the annual maximum of daily maximum near-surface air temperature averaged over land grid cells (excluding Antarctica). Anomalies computed relative to 1961–1990 and adjusted by +0.51 K to approximate anomalies relative to 1850–1900."
+        coverage_content_type: "modelResult"
+
+    dimension_description:
+      dataset_description:
+        ERA5:
+          long_name: "ERA5 (ECMWF Reanalysis v5)"
+
+        Berkeley:
+          long_name: "Berkeley Earth dataset"
+
+        HadEX3:
+          long_name: "HadEX3 climate extremes indices"
+
+######################################
+  extreme_temperatures/txx_decadal_means.csv:
+    description:
+      title: "Global Land TXx (Decadal Mean of Annual Maximum Temperature) Anomalies relative to 1961–1990"
+      summary: >
+        Decadal mean of annual anomalies of the maximum daily maximum near-surface air temperature (TXx) averaged over land (excluding Antarctica),
+        based on HadEX3, Berkeley Earth, and ERA5 datasets.
+      keywords: "temperature extremes, TXx, climate change, heat extremes, land temperature"
+      source: "HadEX3 (Dunn et al., 2020); Berkeley Earth; ERA5 (Hersbach et al., 2020)"
+      references: "Seneviratne et al. (2021); Forster et al. (2023, 2024, 2025); Dunn et al. (2020); Rohde et al. (2013); Hersbach et al. (2020); Wild et al. (2005)"
+      comment: "TXx anomalies calculated relative to 1961–1990 baseline with an offset of 0.51 K applied to approximate 1850–1900 reference period. Differences among datasets reflect varying spatial coverage, completeness, and methodology."
+      time_coverage_resolution: P1Y
+      type: input-datasets
+
+    dimensions:
+      - dataset
+      - time
+
+    variable:
+      txx_extreme_temperature_decadal_mean:
+        standard_name: "air_temperature"
+        long_name: "Decadal mean of annual maximum of daily maximum near-surface air temperature (TXx) anomaly over land relative to 1961–1990"
+        units: "degC"
+        units_metadata: "temperature: difference"
+        cell_methods: "time: maximum within years time: mean (decadal)"
+        coordinates: "time"
+        comment: "TXx defined as the annual maximum of daily maximum near-surface air temperature averaged over land grid cells (excluding Antarctica). Anomalies computed relative to 1961–1990 and adjusted by +0.51 K to approximate anomalies relative to 1850–1900."
+        coverage_content_type: "modelResult"
+
+    dimension_description:
+      dataset_description:
+        ERA5:
+          long_name: "ERA5 (ECMWF Reanalysis v5)"
+
+        Berkeley_Earth:
+          long_name: "Berkeley Earth dataset"
+
+        HadEX3:
+          long_name: "HadEX3 climate extremes indices"
+
+######################################
+  global_land_precipitation/global_land_precipitation.csv:
+    description:
+      #TODO: check is the anomaly relative to which period? Thristram says 1961–1990
+      title: "Annual Global Land Precipitation Anomalies (Relative to 1991–2020)"
+      summary: "Time series of global land precipitation anomalies derived from observational datasets, highlighting long-term trends, interannual variability, and regional heterogeneity in land precipitation."
+      keywords: "precipitation, climate change, hydrological cycle, anomalies, land surface, global"
+      source: "GPCC V2020; CRU TS 4.09; GPCP V2.3; GHCN V4 observational datasets"
+      references: "Gulev et al. (2021); Douville et al. (2021); Cao et al. (2022); Forster et al. (2025); Schamm et al. (2014); Harris et al. (2020); Adler et al. (2018); Menne et al. (2018); Sun et al. (2018); Nogueira (2020); Yate and Ren (2025); Su et al. (2026); Dunn et al. (2024); Zhang et al. (2024b)"
+      region: "land"
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - dataset
+      - time
+
+    variable:
+      # Variable name in the NetCDF file
+      global_land_precipitation:
+        # no standard name as it is an "anomaly"
+        # standard_name: "precipitation_flux"
+        # standard_name: "precipitation_amount" 
+        long_name: "Annual global land precipitation anomaly relative to 1991–2020"
+        # TODO: check units
+        # units: "kg m-2 s-1"
+        units: "kg m-2"
+        cell_methods: "area: mean where land time: sum"
+        coordinates: "time"
+        comment: "Global land precipitation anomaly computed relative to the 1991–2020 climatological baseline. Derived from multiple observational datasets (GPCC V2020, CRU TS 4.09, GPCP V2.3, GHCN V4). Differences among datasets arise from input data, spatial coverage, and gridding methods."
+        coverage_content_type: "modelResult"
+
+    dimension_description:
+      dataset_description:
+        GPCC:
+          long_name: "Global Precipitation Climatology Centre"
+
+        CRU:
+          long_name: "Climatic Research Unit"
+
+        GPCP:
+          long_name: "Global Precipitation Climatology Project"
+
+        GHCN:
+          long_name: "Global Historical Climatology Network"
+
+######################################
+  global_mean_temperatures/annual_averages.csv:
+    description:
+      title: Global Mean Surface Temperature Change relative to 1850–1900
+      summary: >
+        Observed global mean surface temperature anomalies relative to 1850–1900, based on
+        multiple observational datasets and consistent with IPCC AR6 methodology, showing
+        long-term warming and interannual variability.
+      keywords: temperature, global warming, GMST, climate change, surface temperature
+      source: Multi-dataset ensemble following IPCC AR6 (HadCRUT, Berkeley Earth, NOAA, ERA-type datasets)
+      references: >
+        Gulev et al. (2021); Lee et al. (2023); Forster et al. (2023, 2025)
+      region: global
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - time
+
+    variable:
+      gmst_anomaly:
+        standard_name: air_temperature
+        long_name: Global annual mean surface temperature anomaly relative to 1850–1900
+        units: "degC"
+        cell_methods: "area: time: mean"
+        coordinates: time
+        coverage_content_type: "modelResult"
+          #########
+
+  global_mean_temperatures/decadal_averages.csv:
+    description:
+      title: Global Decadal Mean Surface Temperature Change relative to 1850–1900
+      summary: >
+        Observed global mean surface temperature anomalies relative to 1850–1900, based on
+        multiple observational datasets and consistent with IPCC AR6 methodology, showing
+        long-term warming and interannual variability.
+      keywords: temperature, global warming, GMST, climate change, surface temperature
+      source: Multi-dataset ensemble following IPCC AR6 (HadCRUT, Berkeley Earth, NOAA, ERA-type datasets)
+      references: >
+        Gulev et al. (2021); Lee et al. (2023); Forster et al. (2023, 2025)
+      region: global
+      time_coverage_resolution: P10Y
+
+    dimensions:
+      - time
+
+    variable:
+      gmst_anomaly:
+        standard_name: air_temperature
+        long_name: Global decadal mean surface temperature anomaly relative to 1850–1900
+        units: "degC"
+        cell_methods: "area: time: mean"
+        coordinates: time
+        coverage_content_type: "modelResult"
+          ###########
+
+  global_mean_temperatures/twenty_year_averages.csv:
+    description:
+      title: Global Twenty Years Mean Surface Temperature Change relative to 1850–1900
+      summary: >
+        Observed global mean surface temperature anomalies relative to 1850–1900, based on
+        multiple observational datasets and consistent with IPCC AR6 methodology, showing
+        long-term warming and interannual variability.
+      keywords: temperature, global warming, GMST, climate change, surface temperature
+      source: Multi-dataset ensemble following IPCC AR6 (HadCRUT, Berkeley Earth, NOAA, ERA-type datasets)
+      references: >
+        Gulev et al. (2021); Lee et al. (2023); Forster et al. (2023, 2025)
+      region: global
+      time_coverage_resolution: P20Y
+
+    dimensions:
+      - time
+
+    variable:
+      gmst_anomaly:
+        standard_name: air_temperature
+        long_name: "Global 20-years mean surface temperature anomaly relative to 1850–1900"
+        units: "degC"
+        cell_methods: "area: time: mean"
+        coordinates: time
+        coverage_content_type: "modelResult"
+
+######################################
+  greenhouse_gas_concentrations/ghg_concentrations.csv:
+    description:
+      title: Global Mean Atmospheric Concentrations of Well-Mixed Greenhouse Gases
+      summary: >
+        Time series of global mean atmospheric concentrations of 52 well-mixed greenhouse
+        gases, based on NOAA GML, AGAGE, and literature datasets, updated through 2025
+        and consistent with IPCC AR6 methodology.
+      keywords: greenhouse gases, atmospheric concentrations, CO2, methane, nitrous oxide, halocarbons
+      source: >
+        NOAA Global Monitoring Laboratory; AGAGE network; literature compilations and AR6 dataset extensions
+      references: >
+        Lan et al. (2025); Dutton et al. (2024); Prinn et al. (2018, 2025);
+        Western et al. (2025, 2026); Forster et al. (2025); Hodnebrog et al. (2020)
+      comment: >
+        Dataset includes globally averaged concentrations of well-mixed greenhouse gases.
+        CO2 concentrations are reported on the WMO-CO2-X2019 calibration scale. Data are
+        derived from observational networks and supplemented with extrapolations where
+        necessary for minor gases.
+      time_coverage_resolution: P1Y
+      type: igcc-assessment
+
+    dimensions:
+      - time
+
+    variable:
+      CO2:
+        standard_name: mole_fraction_of_carbon_dioxide_in_air
+        long_name: Global mean atmospheric mole fraction of carbon dioxide
+        units: ppm
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      CH4:
+        standard_name: mole_fraction_of_methane_in_air
+        long_name: Global mean atmospheric mole fraction of methane
+        units: ppb
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      N2O:
+        standard_name: mole_fraction_of_nitrous_oxide_in_air
+        long_name: Global mean atmospheric mole fraction of nitrous oxide
+        units: ppb
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      HFC_134a:
+        long_name: Global mean atmospheric mole fraction of HFC-134a
+        units: ppt
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      HFC_23:
+        long_name: Global mean atmospheric mole fraction of HFC-23
+        units: ppt
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      SF6:
+        standard_name: mole_fraction_of_sulfur_hexafluoride_in_air
+        long_name: Global mean atmospheric mole fraction of sulfur hexafluoride
+        units: ppt
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      CF4:
+        standard_name: mole_fraction_of_carbon_tetrafluoride_in_air
+        long_name: Global mean atmospheric mole fraction of carbon tetrafluoride
+        units: ppt
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      # HFCs
+      HFC_32: {standard_name: mole_fraction_of_hfc32_in_air,long_name: Global mean mole fraction of HFC-32, units: ppt, cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_125: {standard_name: mole_fraction_of_hfc125_in_air,long_name: Global mean mole fraction of HFC-125, units: ppt, cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_143a: {standard_name: mole_fraction_of_hfc143a_in_air,long_name: Global mean mole fraction of HFC-143a, units: ppt, cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_152a: {standard_name: mole_fraction_of_hfc152a_in_air,long_name: Global mean mole fraction of HFC-152a, units: ppt, cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_227ea: {standard_name: mole_fraction_of_hfc227ea_in_air,long_name: Global mean mole fraction of HFC-227ea, units: ppt, cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_236fa: {standard_name: mole_fraction_of_hfc236fa_in_air,long_name: Global mean mole fraction of HFC-236fa, units: ppt, cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_245fa: {standard_name: mole_fraction_of_hfc245fa_in_air,long_name: Global mean mole fraction of HFC-245fa, units: ppt, cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_365mfc: {standard_name: mole_fraction_of_hfc365mfc_in_air,long_name: Global mean mole fraction of HFC-365mfc, units: ppt, cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HFC_43_10mee: {standard_name: mole_fraction_ofn_hfc4310mee_in_air,long_name: Global mean mole fraction of HFC-43-10mee, units: ppt, cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+      # PFCs
+      C2F6: {standard_name: mole_fraction_of_pfc116_in_air,long_name: Global mean mole fraction of hexafluoroethane, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      C3F8: {standard_name: mole_fraction_of_pfc218_in_air,long_name: Global mean mole fraction of octafluoropropane, units: ppt, cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      c_C4F8: {standard_name: mole_fraction_of_pfc318_in_air,long_name: Global mean mole fraction of cyclo-C4F8, units: ppt, cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      n_C4F10: {long_name: Global mean mole fraction of decafluorobutane, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      n_C5F12: {long_name: Global mean mole fraction of dodecafluoropentane, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      n_C6F14: {long_name: Global mean mole fraction of tetradecafluorohexane, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      i_C6F14: {long_name: Global mean mole fraction of iso-C6F14, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      C7F16: {long_name: Global mean mole fraction of perfluoroheptane, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      C8F18: {long_name: Global mean mole fraction of perfluorooctane, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+      # CFCs
+      CFC_11: {standard_name: mole_fraction_of_cfc11_in_air,long_name: Global mean mole fraction of CFC-11, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_12: {standard_name: mole_fraction_of_cfc12_in_air,long_name: Global mean mole fraction of CFC-12, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_113: {standard_name: mole_fraction_of_cfc113_in_air,long_name: Global mean mole fraction of CFC-113, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_114: {standard_name: mole_fraction_of_cfc114_in_air,long_name: Global mean mole fraction of CFC-114, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_115: {standard_name: mole_fraction_of_cfc115_in_air,long_name: Global mean mole fraction of CFC-115, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_13: {standard_name: mole_fraction_of_cfc13_in_air,long_name: Global mean mole fraction of CFC-13, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_112: {long_name: Global mean mole fraction of CFC-112, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_112a: {long_name: Global mean mole fraction of CFC_112a, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_113a: {standard_name: mole_fraction_of_carbon_cfc113a_in_air,long_name: Global mean mole fraction of CFC-113a, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CFC_114a: {long_name: Global mean mole fraction of CFC-114a, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+      # HCFCs
+      HCFC_22: {standard_name: mole_fraction_of_carbon_hcfc22_in_air,long_name: Global mean mole fraction of HCFC-22, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HCFC_141b: {standard_name: mole_fraction_of_carbon_hcfc141b_in_air,long_name: Global mean mole fraction of HCFC-141b, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HCFC_142b: {standard_name: mole_fraction_of_carbon_hcfc142b_in_air,long_name: Global mean mole fraction of HCFC-142b, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HCFC_133a: {standard_name: mole_fraction_of_carbon_hcfc133a_in_air,long_name: Global mean mole fraction of HCFC-133a, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HCFC_31: {long_name: Global mean mole fraction of HCFC-31, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      HCFC_124: {standard_name: mole_fraction_of_carbon_hcfc124_in_air,long_name: Global mean mole fraction of HCFC-124, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+      # Other gases
+      NF3: {standard_name: mole_fraction_of_nitrogen_trifluoride_in_air,long_name: Global mean mole fraction of nitrogen trifluoride, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      SO2F2: {standard_name: mole_fraction_of_sulfuryl_fluoride_in_air,long_name: Global mean mole fraction of sulfuryl fluoride, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CCl4: {standard_name: mole_fraction_of_carbon_tetrachloride_in_air,long_name: Global mean mole fraction of carbon tetrachloride, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CH3CCl3: {long_name: Global mean mole fraction of methyl chloroform, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CH3Cl: {standard_name: mass_fraction_of_methyl_chloride_in_air,long_name: Global mean mole fraction of methyl chloride, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CH3Br: {standard_name: mass_fraction_of_methyl_bromide_in_air,long_name: Global mean mole fraction of methyl bromide, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CH2Cl2: {standard_name: mole_fraction_of_dichloromethane_in_air,long_name: Global mean mole fraction of dichloromethane, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      CHCl3: {standard_name: mole_fraction_of_chloroform_in_air,long_name: Global mean mole fraction of chloroform, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+      # Halons
+      Halon_1211: {standard_name: mole_fraction_of_halon1211_in_air,long_name: Global mean mole fraction of Halon-1211, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      Halon_1301: {standard_name: mole_fraction_of_halon1301_in_air,long_name: Global mean mole fraction of Halon-1301, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+      Halon_2402: {standard_name: mole_fraction_of_halon2402_in_air,long_name: Global mean mole fraction of Halon-2402, units: ppt,  cell_methods: "area: time: mean", coverage_content_type: "modelResult"}
+
+######################################
+  greenhouse_gas_emissions/greehouse_gas_emissions_co2eq.csv:
+
+    description:
+      title: Global Anthropogenic Greenhouse Gas Emissions
+      summary: >
+        Annual global anthropogenic greenhouse gas emissions following the IPCC AR6 WGIII
+        framework, including CO2, CH4, N2O, and fluorinated gases expressed in CO2-equivalent
+        using GWP100.
+      keywords: greenhouse gases, emissions, CO2, methane, nitrous oxide, climate change
+      source: >
+        Global Carbon Budget 2025 (CO2); EDGAR v2025 (CH4, N2O, F-gases)
+      references: >
+        Dhakal et al. (2022); Canadell et al. (2021); Friedlingstein et al. (2025);
+        Crippa et al. (2025); Forster et al. (2021)
+      comment: >
+        Emissions follow the IPCC AR6 WGIII system boundary (anthropogenic sources minus sinks).
+        Differences with inventory-based estimates arise primarily from treatment of LULUCF and
+        inclusion/exclusion of indirect anthropogenic effects.
+      time_coverage_resolution: P1Y
+      type: igcc-assessment
+
+    dimensions:
+      - time
+
+    variable:
+      CO2_FFI:
+        long_name: Carbon dioxide emissions from fossil fuels and industry
+        # TODO: units are not compliant
+        # Thristram says that it's GtCO2-eq yr-1
+        units: "Pg yr-1"
+        cell_methods: "time: sum"
+        coverage_content_type: "modelResult"
+
+      CO2_LULUCF:
+        long_name: Net carbon dioxide emissions from land use, land-use change and forestry
+        units: "Pg"
+        cell_methods: "time: sum"
+        coverage_content_type: "modelResult"
+
+      CH4:
+        # standard_name: emission_rate_of_methane_to_air
+        long_name: Methane emissions
+        units: "Gt CO2e"
+        cell_methods: "time: sum"
+        coverage_content_type: "modelResult"
+
+      N2O:
+        # standard_name: emission_rate_of_nitrous_oxide_to_air
+        long_name: Nitrous oxide emissions
+        units: "Gt CO2e"
+        cell_methods: "time: sum"
+        coverage_content_type: "modelResult"
+
+      F_gases:
+        # standard_name: emission_rate_of_synthetic_greenhouse_gases
+        long_name: Fluorinated gas emissions (UNFCCC F-gases)
+        units: "Gt CO2e"
+        cell_methods: "time: sum"
+        coverage_content_type: "modelResult"
+        comment: >
+          Includes HFCs, PFCs, SF6, and NF3.
+
+######################################
+  marine_heatwave_days/MHW_days_per_year_combined.csv:
+    description:
+      title: Global Marine Heatwave Days
+      summary: >
+        Annual global mean number of marine heatwave days based on multiple satellite
+        and reanalysis datasets, following AR6 methodology.
+      keywords: marine heatwaves, SST extremes, ocean warming, climate extremes
+      source: >
+        ERA5 reanalysis; NOAA OISST; OSTIA; NOAA Coral Reef Watch SST
+      references: >
+        Fox-Kemper et al. (2021); Collins et al. (2019); Frölicher et al. (2018);
+        Oliver et al. (2018); Huang et al. (2021); Donlon et al. (2012);
+        Hersbach et al. (2020); Liu et al. (2014)
+      region: sea
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - dataset
+      - time
+
+    variable:
+      marine_heatwave_days:
+        long_name: Global mean annual number of marine heatwave days
+        units: "days"
+        coordinates: "time"
+        cell_methods: "area: mean time: sum"
+        comment: >
+          Marine heatwave (MHW) days defined as days when deseasonalized sea surface
+          temperature exceeds the 99th percentile within an 11-day moving window
+          relative to a 1985–2014 climatological baseline. Values represent the
+          area-weighted global mean between 60S and 60N. Based on multiple datasets
+          (ERA5, OISST, OSTIA, CRW). MHW detection excludes polar regions due to
+          sea-ice variability. An offset relative to 1850–1900 baseline is applied
+          to ensure consistency with preindustrial conditions.
+        coverage_content_type: "modelResult"
+
+    dimension_description:
+      dataset_description:
+        ERA5:
+          long_name: "ERA5 (ECMWF Reanalysis v5)"
+
+        #TODO: long names here
+        OISST:
+          long_name: "sjflsfjlsa"
+
+        OSTIA:
+          long_name: "dslkafjlsaf"
+
+        CRW:
+          long_name: "ldsafjlafhldsa"
+          ######
+  marine_heatwave_days/MHW_days_per_year_combined_2.csv:
+    description:
+      title: Global Marine Heatwave Days
+      summary: >
+        Annual global mean number of marine heatwave days based on multiple satellite
+        and reanalysis datasets, following AR6 methodology.
+      keywords: marine heatwaves, SST extremes, ocean warming, climate extremes
+      source: >
+        ERA5 reanalysis; NOAA OISST; OSTIA; NOAA Coral Reef Watch SST
+      references: >
+        Fox-Kemper et al. (2021); Collins et al. (2019); Frölicher et al. (2018);
+        Oliver et al. (2018); Huang et al. (2021); Donlon et al. (2012);
+        Hersbach et al. (2020); Liu et al. (2014)
+      region: sea
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - time
+
+    variable:
+      marine_heatwave_days:
+        long_name: Global mean annual number of marine heatwave days
+        units: "days"
+        coordinates: "time"
+        cell_methods: "area: mean time: sum"
+        comment: >
+          Marine heatwave (MHW) days defined as days when deseasonalized sea surface
+          temperature exceeds the 99th percentile within an 11-day moving window
+          relative to a 1985–2014 climatological baseline. Values represent the
+          area-weighted global mean between 60S and 60N. Based on multiple datasets
+          (ERA5, OISST, OSTIA, CRW) average. MHW detection excludes polar regions due to
+          sea-ice variability. An offset relative to 1850–1900 baseline is applied
+          to ensure consistency with preindustrial conditions.
+        coverage_content_type: "modelResult"
+
+######################################
+  sea_level_rise/AR6_GMSL_TG_ensemble_FGD.csv:
+    description:
+      title: Global Mean Sea-Level Rise (GMSL) Time Series AR6 ensemble relative to 1993–2018 mean
+      summary: >
+        Time series of observed global mean sea level based on 
+      keywords: sea level rise, ocean, climate change, altimetry, tide gauge, GMSL
+      references: ""
+      region: sea
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - time
+
+    variable:
+      central_estimate:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "Central estimate of mean sea level relative to 1993–2018 mean"
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+        ancillary_variables: "structural_uncertainty internal_uncertainty total_uncertainty"
+
+      structural_uncertainty:
+        long_name: Estimate structural uncertainty
+
+      internal_uncertainty:
+        long_name: Estimate internal uncertainty
+
+      total_uncertainty:
+        long_name: Estimate total uncertainty
+
+          #########
+  sea_level_rise/AR6_GMSL_altimeter_FGD.csv:
+    description:
+      title: Global Mean Sea-Level Rise (GMSL) Time Series AR6 altimeter relative to 1993–2018 mean
+      summary: >
+        Time series of observed global mean sea level based on 
+      keywords: sea level rise, ocean, climate change, altimetry, tide gauge, GMSL
+      references: ""
+      region: sea
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - time
+
+    variable:
+      central_estimate:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "Central estimate of mean sea level relative to 1993–2018 mean"
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      std:
+        long_name: "Standard deviation of sea level" 
+        # TODO check units here.
+        units: "mm"
+        cell_methods: "area: time: standard deviation"
+        coverage_content_type: "modelResult"
+          #########
+  sea_level_rise/AR6_GMSL_reconstructions_FGD.csv:
+    description:
+      title: Global Mean Sea-Level Rise (GMSL) Time Series AR6 reconstruction relative to 1993–2018 mean
+      summary: >
+        Time series of observed global mean sea level based on 
+      keywords: sea level rise, ocean, climate change, altimetry, tide gauge, GMSL
+      references: ""
+      region: sea
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - time
+
+    variable:
+      CW2011:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "CW2011 mean sea level relative to 1993–2018 mean"
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      CW2011_std:
+        long_name: "CW2011 standard deviation of sea level" 
+        # TODO check units here.
+        units: "mm"
+        cell_methods: "area: time: standard deviation"
+        coverage_content_type: "modelResult"
+
+      HA2015:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "HA2015 mean sea level relative to 1993–2018 mean"
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      HA2015_std:
+        long_name: "HA2015 standard deviation of sea level" 
+        units: "mm"
+        cell_methods: "area: time: standard deviation"
+        coverage_content_type: "modelResult"
+
+      DA2017:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "DA2017 mean sea level relative to 1993–2018 mean"
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      DA2017_std:
+        long_name: "DA2017 standard deviation of sea level" 
+        units: "mm"
+        cell_methods: "area: time: standard deviation"
+        coverage_content_type: "modelResult"
+
+      DA2019:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "DA2019 mean sea level relative to 1993–2018 mean"
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      DA2019_std:
+        long_name: "DA2019 standard deviation of sea level" 
+        units: "mm"
+        cell_methods: "area: time: standard deviation"
+        coverage_content_type: "modelResult"
+          
+      FR2020:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "FR2020 mean sea level relative to 1993–2018 mean"
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      FR2020_std:
+        long_name: "FR2020 standard deviation of sea level" 
+        units: "mm"
+        cell_methods: "area: time: standard deviation"
+        coverage_content_type: "modelResult"
+          ######
+  sea_level_rise/IGCC_GMSL_ensemble.csv:
+    description:
+      title: Global Mean Sea-Level Rise (GMSL) Time Series relative to 1993–2018 mean
+      summary: >
+        Time series of observed global mean sea level based on tide gauge reconstructions
+        and satellite altimetry, showing long-term rise and acceleration over the 20th
+        and 21st centuries.
+      keywords: sea level rise, ocean, climate change, altimetry, tide gauge, GMSL
+      references: ""
+      comment: >
+        Global mean sea level rise is primarily driven by thermal expansion and
+        land ice mass loss. The dataset merges tide gauge reconstructions with
+        modern satellite observations.
+      region: global
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - time
+
+    variable:
+      GMSL_mean:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "Global mean sea level relative to 1993-2018 mean"
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      GMSL_standard_deviation:
+        # standard_name: "sea_surface_height_above_geoid"
+        long_name: "Global standard deviation of sea level" 
+        # TODO check units here.
+        units: "mm"
+        # units_metadata: "level: difference"
+        cell_methods: "area: time: standard deviation"
+        coverage_content_type: "modelResult"
+          ######
+  sea_level_rise/altimetry_ens.csv:
+    description:
+      title: Global Mean Sea-Level Rise (GMSL) altimetry
+      summary: >
+        Time series of observed global mean sea level based on 
+      keywords: sea level rise, ocean, climate change, altimetry, tide gauge, GMSL
+      references: ""
+      region: global
+      time_coverage_resolution: P1Y
+
+    dimensions:
+      - time
+
+    variable:
+      AVISO:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "Global mean sea level relative to "
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      NASA:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "Global mean sea level relative to "
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      NOAA:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "NOAA global mean sea level relative to "
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
+      GMSL_mean:
+        standard_name: "sea_surface_height_above_geoid"
+        long_name: "Global mean sea level relative to 1995-2014 mean"
+        units: "mm"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+        comment: IGCC multi-method composite splicing AR6 tide gauge (1901–1992) (rebased to 1993 value of aupdated altimetry) and altimetry data (1993–2025)
+
+      GMSL_standard_deviation:
+        long_name: "Global standard deviation of sea level across providers" 
+        units: "mm"
+        cell_methods: "area: time: standard deviation"
+        coverage_content_type: "modelResult"
+######################################

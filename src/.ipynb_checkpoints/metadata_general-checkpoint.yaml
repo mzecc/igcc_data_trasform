@@ -1,0 +1,21 @@
+# Project-wide metadata (CF Compliance)
+globals:
+  Conventions: "CF-1.8"
+  institution: "Intergovernmental Panel on Climate Change (IPCC) / IGCC"
+  source: "Indicators of Global Climate Change (IGCC) 2024/2025/2026 Datasets"
+  references: "https://github.com/IGCC-data"
+  history: "CSV to NetCDF conversion with Python"
+  comment: "NetCDF conversion of the IGCC annual update dataset."
+
+# How to handle the "Time" axis
+dimensions:
+  time_variants: ["year", "time", "date", "Year", "Time"]
+  units: "years"
+  standard_name: "time"
+  axis: "T"
+
+# Logic for finding data
+processing:
+  recursive: true
+  input_dir: "data"
+  output_extension: ".nc"

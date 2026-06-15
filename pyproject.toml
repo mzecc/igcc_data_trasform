@@ -1,0 +1,34 @@
+[project]
+authors = [
+    { name = "Lanerossi" },
+]
+requires-python = ">=3.10"
+
+dependencies = [
+    "openscm-units>=0.6.2",
+    "scmdata>=0.17.0,<0.18",
+    "nomenclature-iamc>=0.26",
+    "openscm-runner>=0.13.0,<0.14",
+    "openscm-zenodo>=0.5.0,<0.6",
+    "python-dotenv>=1.1.0,<2",
+    "gcages>=0.14.0",
+    "pandas-openscm>=0.5.0",
+    "numpy",
+    "pandas>=2.2.3,<3",
+    "matplotlib",
+    "pyam",
+    "jupyterlab>=4.2.5,<5",
+    "jupytext>=1.18.1,<2",
+    "pandas-indexing>=0.5.2,<0.6",
+    "openpyxl>=3.1.5,<4",
+    "cf_xarray>=0.9.5,<0.10",
+    "rasterio>=1.4.1,<2",
+    "cftime>=1.6.4,<2",
+    "netcdf4>=1.7.1,<2",
+    "nc-time-axis>=1.4.1,<2",
+    "pint-xarray>=0.4,<0.5",
+    "seaborn>=0.13.2,<0.14",
+]
+name = "data_transform"
+version = "0.0.1"
+description = "Scripts that reformat ClimateIndicator `https://github.com/ClimateIndicator` data"
