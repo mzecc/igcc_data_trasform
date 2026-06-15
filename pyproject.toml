@@ -1,6 +1,6 @@
 [project]
 authors = [
-    { name = "Lanerossi" },
+    { name = "MZ" },
 ]
 requires-python = ">=3.10"
 
@@ -16,7 +16,8 @@ dependencies = [
     "numpy",
     "pandas>=2.2.3,<3",
     "matplotlib",
-    "pyam",
+    "pyam-iamc>=3.0.0,<4",
+    "pint>=0.24.0,<0.25",
     "jupyterlab>=4.2.5,<5",
     "jupytext>=1.18.1,<2",
     "pandas-indexing>=0.5.2,<0.6",
@@ -28,7 +29,9 @@ dependencies = [
     "nc-time-axis>=1.4.1,<2",
     "pint-xarray>=0.4,<0.5",
     "seaborn>=0.13.2,<0.14",
+    "pycollocation>=0.6.0a0",
+    "setuptools>=65.0.0,<70.0.0",
 ]
-name = "data_transform"
+name = "igcc_data_transform"
 version = "0.0.1"
 description = "Scripts that reformat ClimateIndicator `https://github.com/ClimateIndicator` data"
