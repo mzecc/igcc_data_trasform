@@ -6,9 +6,10 @@ files:
       title: Headlines
       summary: >
         "SUmmary"
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
+      #Published or web-based references that describe the data 
+      #or methods used to produce it.
       references: >
         "references"
       region: global
@@ -51,7 +52,6 @@ files:
       title: Headlines
       summary: >
         "SUmmary"
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -96,7 +96,6 @@ files:
       title: Headlines
       summary: >
         "SUmmary"
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -151,7 +150,6 @@ files:
         Time series of contributions to global surface temperature change relative to
         1850–1900, including anthropogenic, natural, greenhouse gas and other human
         forcing components, expressed as uncertainty percentiles
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -173,7 +171,6 @@ files:
     variable:
       anthropogenic:
           standard_name: surface_temperature_anomaly
-          # TODO repeat relative to 1850-1900 here as well
           long_name: Anthropogenic contribution to global surface temperature change relative to 1850-1900
           units: "degC"
           units_metadata: "temperature: difference"
@@ -183,7 +180,7 @@ files:
             
       natural:
           standard_name: surface_temperature_anomaly
-          long_name: Natural contribution to global surface temperature change
+          long_name: Natural contribution to global surface temperature change relative to 1850-1900
           units: "degC"
           units_metadata: "temperature: difference"
           cell_methods: "area: time: mean"
@@ -191,24 +188,25 @@ files:
 
       ghg:
           standard_name: surface_temperature_anomaly
-          long_name: Contribution to global surface temperature change from well-mixed greenhouse gases
+          long_name: Contribution to global surface temperature change from well-mixed greenhouse gases relative to 1850-1900
           units: "degC"
           units_metadata: "temperature: difference"
           cell_methods: "area: time: mean"
           coverage_content_type: "modelResult"
           comment: >
            Contribution to global surface temperature change from other anthropogenic forcings consisting of CO2, CH4, N2O and F-gases 
+           relative to 1850-1900
 
       other_human_forcing:
           standard_name: surface_temperature_anomaly
-          long_name: Contribution to global surface temperature change from other anthropogenic forcings
+          long_name: Contribution to global surface temperature change from other anthropogenic forcings relative to 1850-1900
           units: "degC"
           units_metadata: "temperature: difference"
           cell_methods: "area: time: mean"
           coverage_content_type: "modelResult"
           comment: >
            Contribution to global surface temperature change from other anthropogenic forcings consisting of 
-           aerosol–radiation interaction, aerosol–cloud interaction, black carbon on snow, contrails, ozone, stratospheric H2O and land use
+           aerosol–radiation interaction, aerosol–cloud interaction, black carbon on snow, contrails, ozone, stratospheric H2O and land use relative to 1850-1900
           #######
   anthropogenic_warming/Gillett_GMST_rates.csv:
     description:
@@ -216,7 +214,6 @@ files:
       summary: >
         Time series of the rate of anthropogenic global surface temperature change expressed as annualised decadal trends derived from attribution methods.
 
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -249,7 +246,6 @@ files:
       title: Headlines
       summary: >
         "SUmmary"
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -296,7 +292,6 @@ files:
         Time series of contributions to global surface temperature change relative to
         1850–1900, including anthropogenic, natural, greenhouse gas and other human
         forcing components, expressed as uncertainty percentiles
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -369,7 +364,6 @@ files:
     description: 
       title: TITLE
       summary: "summary"
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -429,7 +423,6 @@ files:
       title: Headlines
       summary: >
         "SUmmary"
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -476,7 +469,6 @@ files:
         Time series of contributions to global surface temperature change relative to
         1850–1900, including anthropogenic, natural, greenhouse gas and other human
         forcing components, expressed as uncertainty percentiles
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -650,7 +642,6 @@ files:
       title: TITLE
       summary: >
         SUMMARY
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -794,7 +785,6 @@ files:
       title: Headlines
       summary: >
         "SUmmary"
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -840,7 +830,6 @@ files:
       title: ERF_relative_to_1750
       summary: >
         "SUmmary"
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -871,7 +860,6 @@ files:
       title: Temperature relative to 1750
       summary: >
         "SUmmary"
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -914,7 +902,6 @@ files:
       title: Headlines
       summary: >
         "Reference year ~2023 (213 GtCO2 recent emissions)"
-      keywords: "KEYWORDSSS"
       source: >
         "SOURCES"
       references: >
@@ -965,11 +952,9 @@ files:
       summary: >
         Time series of Earth Energy Imbalance (EEI) and associated Earth heat inventory
         components, based on observational datasets and consistent with IPCC AR6 methodology.
-      keywords: Earth energy imbalance, EEI, ocean heat content, radiative flux, climate change
       source: >
         Ocean heat content datasets; GCOS Earth heat inventory components; AR6 methodology;
         CERES satellite observations (for comparison)
-      # TODO check what references is meant to be
       references: >
         Forster et al. (2021, 2023, 2024, 2025); von Schuckmann et al. (2020, 2023);
         Cheng et al. (2019, 2022); Loeb et al. (2021, 2024)
@@ -1070,7 +1055,6 @@ files:
       summary: >
         Time series of effective radiative forcing (ERF) from anthropogenic and natural
         drivers relative to 1750, based on IPCC AR6 methodology and updated datasets.
-      keywords: radiative forcing, ERF, greenhouse gases, aerosols, climate forcing
       source: >
         AR6-based methodology; updated greenhouse gas concentrations; aerosol datasets;
         solar forcing datasets
@@ -1086,7 +1070,15 @@ files:
       reference_period: 1750
 
     dimensions:
+      - percentile
       - time
+
+    coordinate_description:
+      percentile:
+        long_name: 'percentile'
+        units: "1"
+        coverage_content_type: 'coordinate'
+        comment: 'Percentiles of the temperature distribution.'
 
     variable:
       # Aggregated
@@ -1108,6 +1100,23 @@ files:
         comment: >
           Computed as the aggregated sum of all anthropogenic forcing agents, i.e.
           CO2, Non-CO2 (Halogenated gases, N20 and CH4), O3, Aerosols and Minor relative to 1750
+
+      anthro_nonwmghg:
+        long_name: Effective radiative forcing relative to 1750 from anthropogenic sources not related to well-mixed greenhouse gases
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+        comment: >
+          Computed as the aggregated sum of anthropogenic forcing agents, not related to well-mixed greenhouse gases
+          i.e. O3, Aerosols and Minor relative to 1750
+
+      wmghg:
+        long_name: Effective radiative forcing from anthropogenic well-mixed greenhouse gases relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+        comment: >
+          Computed as the aggregated sum of CO2, CH4, N2O, and halogenated gases relative to 1750
 
       nonco2wmghg:
         long_name: Effective radiative forcing from non-CO2 well-mixed greenhouse gases relative to 1750
@@ -1142,6 +1151,12 @@ files:
           Computed as the aggregated sum of aerosol-radiation and aerosol-cloud interaction forcing components relative to 1750
 
       # Natural forcings
+      natural:
+        long_name: Effective radiative forcing from natual sources (solar + volcanic) relative to 1750
+        units: "W m-2"
+        cell_methods: "area: time: mean"
+        coverage_content_type: "modelResult"
+
       solar:
         long_name: Effective radiative forcing from solar irradiance relative to 1750
         units: "W m-2"
@@ -1155,13 +1170,13 @@ files:
         coverage_content_type: "modelResult"
 
       # Aerosols and related effects
-      aerosol-radiation_interactions:
+      aerosol_radiation_interactions:
         long_name: Effective radiative forcing from aerosol-radiation interactions relative to 1750
         units: "W m-2"
         cell_methods: "area: time: mean"
         coverage_content_type: "modelResult"
 
-      aerosol-cloud_interactions:
+      aerosol_cloud_interactions:
         long_name: Effective radiative forcing from aerosol-cloud interactions relative to 1750
         units: "W m-2"
         cell_methods: "area: time: mean"
@@ -1295,7 +1310,6 @@ files:
       summary: > 
         Annual anomalies of the maximum daily maximum near-surface air temperature (TXx) averaged over land (excluding Antarctica),
         based on HadEX3, Berkeley Earth, and ERA5 datasets.
-      keywords: "temperature extremes, TXx, climate change, heat extremes, land temperature"
       source: "HadEX3 (Dunn et al., 2020); Berkeley Earth; ERA5 (Hersbach et al., 2020)"
       references: "Seneviratne et al. (2021); Forster et al. (2023, 2024, 2025); Dunn et al. (2020); Rohde et al. (2013); Hersbach et al. (2020); Wild et al. (2005)"
       comment: >
@@ -1336,7 +1350,6 @@ files:
       summary: >
         Decadal mean of annual anomalies of the maximum daily maximum near-surface air temperature (TXx) averaged over land (excluding Antarctica),
         based on HadEX3, Berkeley Earth, and ERA5 datasets.
-      keywords: "temperature extremes, TXx, climate change, heat extremes, land temperature"
       source: "HadEX3 (Dunn et al., 2020); Berkeley Earth; ERA5 (Hersbach et al., 2020)"
       references: "Seneviratne et al. (2021); Forster et al. (2023, 2024, 2025); Dunn et al. (2020); Rohde et al. (2013); Hersbach et al. (2020); Wild et al. (2005)"
       comment: "TXx anomalies calculated relative to 1961–1990 baseline with an offset of 0.51 K applied to approximate 1850–1900 reference period. Differences among datasets reflect varying spatial coverage, completeness, and methodology."
@@ -1375,7 +1388,6 @@ files:
       #TODO: check is the anomaly relative to which period? Thristram says 1961–1990
       title: "Annual Global Land Precipitation Anomalies (Relative to 1991–2020)"
       summary: "Time series of global land precipitation anomalies derived from observational datasets, highlighting long-term trends, interannual variability, and regional heterogeneity in land precipitation."
-      keywords: "precipitation, climate change, hydrological cycle, anomalies, land surface, global"
       source: "GPCC V2020; CRU TS 4.09; GPCP V2.3; GHCN V4 observational datasets"
       references: "Gulev et al. (2021); Douville et al. (2021); Cao et al. (2022); Forster et al. (2025); Schamm et al. (2014); Harris et al. (2020); Adler et al. (2018); Menne et al. (2018); Sun et al. (2018); Nogueira (2020); Yate and Ren (2025); Su et al. (2026); Dunn et al. (2024); Zhang et al. (2024b)"
       region: "land"
@@ -1422,7 +1434,6 @@ files:
         Observed global mean surface temperature anomalies relative to 1850–1900, based on
         multiple observational datasets and consistent with IPCC AR6 methodology, showing
         long-term warming and interannual variability.
-      keywords: temperature, global warming, GMST, climate change, surface temperature
       source: Multi-dataset ensemble following IPCC AR6 (HadCRUT, Berkeley Earth, NOAA, ERA-type datasets)
       references: >
         Gulev et al. (2021); Lee et al. (2023); Forster et al. (2023, 2025)
@@ -1449,7 +1460,6 @@ files:
         Observed global mean surface temperature anomalies relative to 1850–1900, based on
         multiple observational datasets and consistent with IPCC AR6 methodology, showing
         long-term warming and interannual variability.
-      keywords: temperature, global warming, GMST, climate change, surface temperature
       source: Multi-dataset ensemble following IPCC AR6 (HadCRUT, Berkeley Earth, NOAA, ERA-type datasets)
       references: >
         Gulev et al. (2021); Lee et al. (2023); Forster et al. (2023, 2025)
@@ -1476,7 +1486,6 @@ files:
         Observed global mean surface temperature anomalies relative to 1850–1900, based on
         multiple observational datasets and consistent with IPCC AR6 methodology, showing
         long-term warming and interannual variability.
-      keywords: temperature, global warming, GMST, climate change, surface temperature
       source: Multi-dataset ensemble following IPCC AR6 (HadCRUT, Berkeley Earth, NOAA, ERA-type datasets)
       references: >
         Gulev et al. (2021); Lee et al. (2023); Forster et al. (2023, 2025)
@@ -1503,7 +1512,6 @@ files:
         Time series of global mean atmospheric concentrations of 52 well-mixed greenhouse
         gases, based on NOAA GML, AGAGE, and literature datasets, updated through 2025
         and consistent with IPCC AR6 methodology.
-      keywords: greenhouse gases, atmospheric concentrations, CO2, methane, nitrous oxide, halocarbons
       source: >
         NOAA Global Monitoring Laboratory; AGAGE network; literature compilations and AR6 dataset extensions
       references: >
@@ -1634,7 +1642,6 @@ files:
         Annual global anthropogenic greenhouse gas emissions following the IPCC AR6 WGIII
         framework, including CO2, CH4, N2O, and fluorinated gases expressed in CO2-equivalent
         using GWP100.
-      keywords: greenhouse gases, emissions, CO2, methane, nitrous oxide, climate change
       source: >
         Global Carbon Budget 2025 (CO2); EDGAR v2025 (CH4, N2O, F-gases)
       references: >
@@ -1648,7 +1655,14 @@ files:
       type: igcc-assessment
 
     dimensions:
+      - accounting_method
       - time
+
+    coordinate_description:
+      accounting_method:
+        long_name: Emissons accounting method
+        coverage_content_type: 'coordinate'
+        comment: Method of accounting according to WGIII
 
     variable:
       CO2_FFI:
@@ -1695,7 +1709,6 @@ files:
       summary: >
         Annual global mean number of marine heatwave days based on multiple satellite
         and reanalysis datasets, following AR6 methodology.
-      keywords: marine heatwaves, SST extremes, ocean warming, climate extremes
       source: >
         ERA5 reanalysis; NOAA OISST; OSTIA; NOAA Coral Reef Watch SST
       references: >
@@ -1728,17 +1741,16 @@ files:
     dimension_description:
       dataset_description:
         ERA5:
-          long_name: "ERA5 (ECMWF Reanalysis v5)"
+          long_name: ERA5 (ECMWF Reanalysis v5) data etc.
 
-        #TODO: long names here
         OISST:
-          long_name: "sjflsfjlsa"
+          long_name: OISST data etc.
 
         OSTIA:
-          long_name: "dslkafjlsaf"
+          long_name: OISST data etc.
 
         CRW:
-          long_name: "ldsafjlafhldsa"
+          long_name: CRW data etc. 
           ######
   marine_heatwave_days/MHW_days_per_year_combined_2.csv:
     description:
@@ -1746,7 +1758,6 @@ files:
       summary: >
         Annual global mean number of marine heatwave days based on multiple satellite
         and reanalysis datasets, following AR6 methodology.
-      keywords: marine heatwaves, SST extremes, ocean warming, climate extremes
       source: >
         ERA5 reanalysis; NOAA OISST; OSTIA; NOAA Coral Reef Watch SST
       references: >
@@ -1781,7 +1792,6 @@ files:
       title: Global Mean Sea-Level Rise (GMSL) Time Series AR6 ensemble relative to 1993–2018 mean
       summary: >
         Time series of observed global mean sea level based on 
-      keywords: sea level rise, ocean, climate change, altimetry, tide gauge, GMSL
       references: ""
       region: sea
       time_coverage_resolution: P1Y
@@ -1813,7 +1823,6 @@ files:
       title: Global Mean Sea-Level Rise (GMSL) Time Series AR6 altimeter relative to 1993–2018 mean
       summary: >
         Time series of observed global mean sea level based on 
-      keywords: sea level rise, ocean, climate change, altimetry, tide gauge, GMSL
       references: ""
       region: sea
       time_coverage_resolution: P1Y
@@ -1841,7 +1850,6 @@ files:
       title: Global Mean Sea-Level Rise (GMSL) Time Series AR6 reconstruction relative to 1993–2018 mean
       summary: >
         Time series of observed global mean sea level based on 
-      keywords: sea level rise, ocean, climate change, altimetry, tide gauge, GMSL
       references: ""
       region: sea
       time_coverage_resolution: P1Y
@@ -1923,7 +1931,6 @@ files:
         Time series of observed global mean sea level based on tide gauge reconstructions
         and satellite altimetry, showing long-term rise and acceleration over the 20th
         and 21st centuries.
-      keywords: sea level rise, ocean, climate change, altimetry, tide gauge, GMSL
       references: ""
       comment: >
         Global mean sea level rise is primarily driven by thermal expansion and
@@ -1957,7 +1964,6 @@ files:
       title: Global Mean Sea-Level Rise (GMSL) altimetry
       summary: >
         Time series of observed global mean sea level based on 
-      keywords: sea level rise, ocean, climate change, altimetry, tide gauge, GMSL
       references: ""
       region: global
       time_coverage_resolution: P1Y
@@ -1993,6 +1999,7 @@ files:
         units: "mm"
         cell_methods: "area: time: mean"
         coverage_content_type: "modelResult"
+        ancillary_variables: "GMSL_standard_deviation"
         comment: IGCC multi-method composite splicing AR6 tide gauge (1901–1992) (rebased to 1993 value of aupdated altimetry) and altimetry data (1993–2025)
 
       GMSL_standard_deviation:
