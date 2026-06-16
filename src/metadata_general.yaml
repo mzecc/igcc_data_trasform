@@ -3,11 +3,8 @@ globals:
   # Highly recomended
   title: UPDATED_AT_RUNTIME
   summary: UPDATED_AT_RUNTIME
-  keywords: UPDATED_AT_RUNTIME
-  keywords_vocabulary: "CF:NetCDF COARDS Climate and Forecast Standard Names"
-  Conventions: "CF-1.9, ACDD-1.3"
-  # Recomended
-  standard_name_vocabulary: ALLLLL
+  Conventions: "CF-1.9" 
+  # Recommended
   id: UPDATED_AT_RUNTIME
     #id: "An identifier for the data set, provided by and unique within its naming authority."
   naming_authority: "iiasa.ac.at"
@@ -49,7 +46,6 @@ dimensions:
     standard_name: time
     long_name: time
     bounds: "time_bnds"
-    # units: "days since 2024-11-8 09:00:00"
     units: "days since 1750-01-01 00:00:00"
     calendar: "365_day" #or proleptic_gregorian
     axis: "T"
@@ -84,7 +80,4 @@ default_variable_encoding:
 # Logic for finding data
 processing:
   recursive: true
-  input_dir: "../data/data/global_land_precipitation"
-  output_dir: "netcdf"
-  output_extension: ".nc"
-  bounds_dimension: "bnds"
+  output_dir: "../data/netcdf"

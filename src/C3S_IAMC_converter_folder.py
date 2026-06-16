@@ -112,12 +112,31 @@ repo_url = "https://github.com/ClimateIndicator/data.git"
 target_dir = "../data"
 
 def update_repo():
-    if os.path.isdir(os.path.join(target_dir, ".git")):
-        # Repo exists → pull updates
-        subprocess.run(["git", "-C", target_dir, "pull"], check=True)
+    target_path = os.path.normpath(target_dir)
+    
+    if os.path.isdir(os.path.join(target_path, ".git")):
+        # Repo exists → discard untracked files and pull updates
+        
+        # First, do a dry run to see what would be removed (optional, for safety)
+        # subprocess.run(["git", "-C", target_path, "clean", "-n", "-fd"], check=True)
+        
+        # Discard all untracked files and directories
+        subprocess.run(
+            ["git", "-C", target_path, "clean", "-fd"],
+            check=True
+        )
+        
+        # Now pull updates
+        subprocess.run(
+            ["git", "-C", target_path, "pull"],
+            check=True
+        )
     else:
         # Repo doesn't exist → clone it
-        subprocess.run(["git", "clone", repo_url, target_dir], check=True)
+        subprocess.run(
+            ["git", "clone", repo_url, target_path],
+            check=True
+        )
 
 update_repo()
 
@@ -452,7 +471,7 @@ def antropogenic(file_path,name,model,region,scenario):
 
 
 # %% [markdown]
-# # Process data
+# # Process data IAMC
 
 # %% [markdown]
 # ### Antropogenic temperature
@@ -566,7 +585,9 @@ for file_path in folder.iterdir():
 folder = C3S_FOLDER / "effective_radiative_forcing"
 
 scenario_map={"ERF_best_aggregates": "|Median",
+              "ERF_p95": "|95th Percentile",
              "ERF_p95_aggregates": "|95th Percentile",
+             "ERF_p05": "| 5th Percentile",
              "ERF_p05_aggregates": "| 5th Percentile",
              "ERF_best": "|Median",}
           
@@ -896,26 +917,17 @@ def load_yaml(path: Path) -> dict[str, Any]:
 def process_erf(file_path:Path, df: pd.DataFrame, df_time_in_days: pd.DataFrame)->xr.DataArray:
 
     folder = file_path.parent
+
+    file_list = ["ERF_p05.csv","ERF_p05_aggregates.csv",
+                "ERF_p95.csv","ERF_p95_aggregates.csv"]
     
     df_aggr_best = pd.read_csv(
-        folder/"ERF_best_aggregates.csv",
-        engine="python",
-        comment="#",
-        skip_blank_lines=True,
-    )
-    df_aggr_p05 = pd.read_csv(
-        folder/"ERF_p05_aggregates.csv",
-        engine="python",
-        comment="#",
-        skip_blank_lines=True,
-    )
-    df_aggr_p95 = pd.read_csv(
-        folder/"ERF_p95_aggregates.csv",
-        engine="python",
-        comment="#",
-        skip_blank_lines=True,
-    )
-    
+            folder/"ERF_best_aggregates.csv",
+            engine="python",
+            comment="#",
+            skip_blank_lines=True,
+        )
+    df_aggr_best.columns = df_aggr_best.columns.str.replace("-", "_", regex=False)
     df_median = pd.merge(df,df_aggr_best, how="outer")
     
     mask = df_median.columns.str.startswith("time")
@@ -924,21 +936,36 @@ def process_erf(file_path:Path, df: pd.DataFrame, df_time_in_days: pd.DataFrame)
     data_df_median = df_median.iloc[:,~mask].copy()
     data_df_median["time"] = df_time_in_days["time"]
     
-    mask = df_aggr_p05.columns.str.startswith("time")
-    df_aggr_p05 = df_aggr_p05.iloc[:,~mask]
-    df_aggr_p05["time"] = df_time_in_days["time"]
+    df_list = []
+    for i in range(0,4,2):
+        df = pd.read_csv(
+            folder/file_list[i],
+            engine="python",
+            comment="#",
+            skip_blank_lines=True,
+        )
+        df.columns = df.columns.str.replace("-", "_", regex=False)
+        df_aggr = pd.read_csv(
+            folder/file_list[i+1],
+            engine="python",
+            comment="#",
+            skip_blank_lines=True,
+        )
+        df_aggr.columns = df_aggr.columns.str.replace("-", "_", regex=False)
+        df_mrg = pd.merge(df,df_aggr, how="outer")
     
+        mask = df_mrg.columns.str.startswith("time")
+        df_mrg = df_mrg.iloc[:,~mask]
+        df_mrg["time"] = df_time_in_days["time"]
     
-    mask = df_aggr_p95.columns.str.startswith("time")
-    df_aggr_p95 = df_aggr_p95.iloc[:,~mask]
-    df_aggr_p95["time"] = df_time_in_days["time"]
-
+        df_list.append(df_mrg)
+    
     datasets = []
-
+    
     for label, df_data in [
-        ("p05", df_aggr_p05),
+        ("p05", df_list[0]),
         ("median", data_df_median),
-        ("p95", df_aggr_p95),
+        ("p95", df_list[1]),
     ]:
         ds_tmp = xr.Dataset.from_dataframe(df_data.set_index("time"))
     
@@ -957,7 +984,6 @@ def process_erf(file_path:Path, df: pd.DataFrame, df_time_in_days: pd.DataFrame)
         ),
         join="outer"
     )
-
     return ds
 
 def process_relative_to_1750(df: pd.DataFrame, general:dict, specific:dict, file: str, ref_year: int)->xr.DataArray:
@@ -995,12 +1021,6 @@ def process_relative_to_1750(df: pd.DataFrame, general:dict, specific:dict, file
     )
 
     # Attributes 
-    # ds["compound_emitted"].attrs.update({'long_name':'emitted compound', 'coverage_content_type': 'coordinate',
-    #                                      'comment':'Species or emission category whose emissions produce the forcing response.'})
-    # ds["forcing_agent"].attrs.update({'long_name':'forcing component', 'coverage_content_type': 'coordinate',
-    #                                   'comment':'Component of effective radiative forcing attributable to the emitted compound.'})
-    # ds["percentile"].attrs.update({'long_name':'percentile', 'units': "1", 'coverage_content_type': 'coordinate',
-    #                                'comment':'Percentiles of the total effective radiative forcing distribution.'})
     ds["time"].attrs.update(general["dimensions"]["time"])
     
     # Bounds
@@ -1047,6 +1067,35 @@ def process_anthropogenic(df: pd.DataFrame, df_time_in_days: pd.DataFrame)->xr.D
 
     return ds
 
+def process_emissions(df: pd.DataFrame, df_time_in_days: pd.DataFrame)->xr.DataArray:
+    
+    accounting_method = ["WGIII",]
+    
+    datasets = []
+    
+    for acc in accounting_method:
+        
+        data = data_df.copy()
+        data["time"] = df_time_in_days["time"]
+        
+        ds_tmp = xr.Dataset.from_dataframe(data.set_index("time"))
+        ds_tmp = ds_tmp.assign_coords(
+            time=("time", df_time_in_days["time"].squeeze().to_numpy())
+        )
+    
+        datasets.append(ds_tmp)
+    
+    ds = xr.concat(
+        datasets,
+        dim=xr.DataArray(
+            accounting_method,
+            dims="accounting_method",
+            name="accounting_method",
+        ),
+    )
+
+    return ds
+
 def process_headers(file_path:Path, general:dict, specific:dict, ref_year: int)->xr.Dataset:
 
     name = file_path.stem
@@ -1058,6 +1107,7 @@ def process_headers(file_path:Path, general:dict, specific:dict, ref_year: int)-
         skip_blank_lines=True,
         na_values=[" ", "  ", "\t"],
     )
+    df_gmst.columns = df_gmst.columns.str.replace("-", "_", regex=False)
     
     last_col = df_gmst.columns[-1]
     
@@ -1091,6 +1141,7 @@ def process_headers(file_path:Path, general:dict, specific:dict, ref_year: int)-
             skip_blank_lines=True,
             na_values=[" ", "  ", "\t"],
         )
+        df_gsat.columns = df_gsat.columns.str.replace("-", "_", regex=False)
         
         last_col = df_gsat.columns[-1]
         df_gsat_sr15 = df_gsat[df_gsat[last_col].str.contains("SR", na=False)].drop(columns=["notes"], errors="ignore").loc[:, lambda df: ~df.columns.str.contains("^Unnamed")] 
@@ -1213,6 +1264,7 @@ def process_carbon_budget(file_path:Path)->xr.Dataset():
                 skip_blank_lines=True,
                 na_values=[" ", "  ", "\t"],
             )
+        df.columns = df.columns.str.replace("-", "_", regex=False)
         df_list.append((parameters_list[i],df))
 
 
@@ -1271,13 +1323,8 @@ specific = load_yaml(SPECIFIC_METADATA_FILE)
 
 processing = general.get("processing", {})
 
-input_dir_setting = Path(processing.get("input_dir", "data"))
-
-output_dir_setting = Path(processing.get("output_dir", "netcdf"))
-if output_dir_setting.is_absolute():
-    output_dir = output_dir_setting
-else:
-    output_dir = input_dir_setting.parent / output_dir_setting
+output_dir = Path(processing.get("output_dir", "../data/netcdf"))
+output_dir.mkdir(parents=True, exist_ok=True)
 
 # %%
 for file, metadata in specific.get("files", {}).items():
@@ -1346,13 +1393,12 @@ for file, metadata in specific.get("files", {}).items():
             
         elif name in ["Gillett_GMST_timeseries","Ribes_GMST_timeseries","Walsh_GMST_timeseries","Gillett_GMST_rates","Ribes_GMST_rates","Walsh_GMST_rates"]:
             if name in ["Walsh_GMST_timeseries","Walsh_GMST_rates"]:
-                df.rename(columns={"aerosol-radiation_interactions": "aerosol-radiation_interactions_p95"}, inplace=True)
+                df.rename(columns={"aerosol_radiation_interactions": "aerosol_radiation_interactions_p95"}, inplace=True)
                 
             ds = process_anthropogenic(df, df_time_in_days)
-            
-        elif name == "altimetry_indiv_ensemble":
-            # Processing: altimetry_indiv_ensemble and altimetry_ens
-            ds = process_altimetry(file_path, df, df_time_in_days)
+
+        elif name == "greehouse_gas_emissions_co2eq":
+            ds = process_emissions(df, df_time_in_days)
 
         else: 
             if len(variables) == 1:
@@ -1433,13 +1479,36 @@ for file, metadata in specific.get("files", {}).items():
         description = list(file_dict["dimension_description"].values())[0]
         ds[coord_descr] = ( (coordinate,), [description[s]["long_name"] for s in data_df.columns])
 
-    # ds.to_netcdf(file.split(".")[0]+".nc")
-    ds.to_netcdf(name + ".nc",encoding=encoding)
+    name = name + ".nc"
+    ds.to_netcdf(output_dir/name, encoding=encoding)
+
+# %% [markdown]
+# ## Variable like
 
 # %%
+ds = xr.open_dataset(output_dir / "altimetry_ens.nc")
+ds
+
+# %% [markdown]
+# ## Table like with additional metadata coordinate for description
+
+# %%
+ds = xr.open_dataset(output_dir / "MHW_days_per_year_combined.nc")
 ds
 
 # %%
-file_dict["dimensions"]
+ds["dataset_description"].values
+
+# %% [markdown]
+# ## Table like
 
 # %%
+ds = xr.open_dataset(output_dir / "Gillett_GMST_headlines.nc")
+ds
+
+# %% [markdown]
+# ## Mix
+
+# %%
+ds = xr.open_dataset(output_dir / "Gillett_GMST_timeseries.nc")
+ds
