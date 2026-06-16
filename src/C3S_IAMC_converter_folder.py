@@ -13,9 +13,9 @@
 # ---
 
 # %% [markdown]
-# # Post process emissions
+# # IGCC data formatting
 #
-# Here we post process emissions arfter harmonization and infilling.
+# Indicators data reformatting form csv files in https://github.com/ClimateIndicator/data to IAMC and NetCDF files
 
 # %% [markdown]
 # ## Imports
