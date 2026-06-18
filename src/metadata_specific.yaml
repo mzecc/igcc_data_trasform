@@ -16,8 +16,8 @@ files:
       # type: igcc-assessment
 
     dimensions:
-      - compound_emitted
-      - forcing_agent
+      - definition
+      - component
       - percentile
 
     coordinate_description:
@@ -60,8 +60,8 @@ files:
       # type: igcc-assessment
 
     dimensions:
-      - compound_emitted
-      - forcing_agent
+      - definition
+      - component
       - percentile
 
     coordinate_description:
@@ -158,10 +158,16 @@ files:
       time_coverage_resolution: P1Y
 
     dimensions:
+      - component
       - percentile
       - time
 
     coordinate_description:
+      component:
+        long_name: Temperature attribution
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
       percentile:
         long_name: 'percentile'
         units: "1"
@@ -169,44 +175,14 @@ files:
         comment: 'Percentiles of the temperature distribution.'
 
     variable:
-      anthropogenic:
+      GMST:
           standard_name: surface_temperature_anomaly
-          long_name: Anthropogenic contribution to global surface temperature change relative to 1850-1900
+          long_name: Global surface temperature change relative to 1850-1900
           units: "degC"
           units_metadata: "temperature: difference"
           cell_methods: "area: time: mean"
           coverage_content_type: "modelResult"
 
-            
-      natural:
-          standard_name: surface_temperature_anomaly
-          long_name: Natural contribution to global surface temperature change relative to 1850-1900
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-
-      ghg:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution to global surface temperature change from well-mixed greenhouse gases relative to 1850-1900
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-          comment: >
-           Contribution to global surface temperature change from other anthropogenic forcings consisting of CO2, CH4, N2O and F-gases 
-           relative to 1850-1900
-
-      other_human_forcing:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution to global surface temperature change from other anthropogenic forcings relative to 1850-1900
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-          comment: >
-           Contribution to global surface temperature change from other anthropogenic forcings consisting of 
-           aerosol–radiation interaction, aerosol–cloud interaction, black carbon on snow, contrails, ozone, stratospheric H2O and land use relative to 1850-1900
           #######
   anthropogenic_warming/Gillett_GMST_rates.csv:
     description:
@@ -222,10 +198,16 @@ files:
       time_coverage_resolution: P10Y
 
     dimensions:
+      - component
       - percentile
       - time
 
     coordinate_description:
+      component:
+        long_name: Temperature attribution
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
       percentile:
         long_name: 'percentile'
         units: "1"
@@ -233,7 +215,7 @@ files:
         comment: 'Percentiles of the temperature distribution.'
 
     variable:
-      anthropogenic:
+      GMST:
           long_name: long_name to set
           units: "degC yr-1"
           units_metadata: "temperature: difference"
@@ -300,10 +282,16 @@ files:
       time_coverage_resolution: P1Y
 
     dimensions:
+      - component
       - percentile
       - time
 
     coordinate_description:
+      component:
+        long_name: Temperature attribution
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
       percentile:
         long_name: 'percentile'
         units: "1"
@@ -311,54 +299,14 @@ files:
         comment: 'Percentiles of the temperature distribution.'
 
     variable:
-      anthropogenic:
+      GMST:
           standard_name: surface_temperature_anomaly
           long_name: Anthropogenic contribution to global surface temperature change
           units: "degC"
           units_metadata: "temperature: difference"
           cell_methods: "area: time: mean"
           coverage_content_type: "modelResult"
-
             
-      natural:
-          standard_name: surface_temperature_anomaly
-          long_name: Natural contribution to global surface temperature change
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-
-      ghg:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution to global surface temperature change from well-mixed greenhouse gases 
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-          comment: >
-           Contribution to global surface temperature change from other anthropogenic forcings consisting of CO2, CH4, N2O and F-gases relative to 1850–1900
-
-      other_human_forcing:
-          standard_name: surface_temperature_anomaly
-          long_name: Global mean surface temperature change attributable to other human forcings 
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-          comment: >
-           Contribution to global surface temperature change from other anthropogenic forcings consisting of 
-           aerosol–radiation interaction, aerosol–cloud interaction, black carbon on snow, contrails, ozone, stratospheric H₂O and land use
-           relative to 1850-1900
-            
-      total:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution to global surface temperature change from total 
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-          comment: >
-            Total global surface temperature change including both anthropogenic and natural contributions.
           #######
   anthropogenic_warming/Ribes_GMST_rates.csv:
     description: 
@@ -372,10 +320,16 @@ files:
       time_coverage_resolution: P10Y
 
     dimensions:
+      - component
       - percentile
       - time
 
     coordinate_description:
+      component:
+        long_name: Temperature attribution
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
       percentile:
         long_name: 'percentile'
         units: "1"
@@ -383,40 +337,13 @@ files:
         comment: 'Percentiles of the temperature distribution.'
 
     variable:
-      anthropogenic:
+      GMST:
           long_name: Anthropogenic (TODO ADDD)
           units: "degC yr-1"
           units_metadata: "temperature: difference"
           cell_methods: "area: time: mean"
           coverage_content_type: "modelResult"
             
-      natural:
-          long_name: Natural (TODO ADDD)
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-
-      ghg:
-          long_name: adfsf (TODO ADDD)
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-
-      other_human_forcing:
-          long_name: adf (TODO ADDD)
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-            
-      total:
-          long_name: asdfa (TODO ADDD)
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
           #######
   anthropogenic_warming/Walsh_GMST_headlines.csv:
     description:
@@ -477,10 +404,16 @@ files:
       time_coverage_resolution: P1Y
 
     dimensions:
+      - component
       - percentile
       - time
 
     coordinate_description:
+      component:
+        long_name: Temperature attribution
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
       percentile:
         long_name: 'percentile'
         units: "1"
@@ -488,154 +421,14 @@ files:
         comment: 'Percentiles of the temperature distribution.'
 
     variable:
-      anthropogenic:
+      GMST:
           standard_name: surface_temperature_anomaly
           long_name: Anthropogenic contribution to global surface temperature change
           units: "degC"
           units_metadata: "temperature: difference"
           cell_methods: "area: time: mean"
           coverage_content_type: "modelResult"
-
             
-      natural:
-          standard_name: surface_temperature_anomaly
-          long_name: Natural contribution to global surface temperature change
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-
-      ghg:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution to global surface temperature change from well-mixed greenhouse gases 
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-          comment: >
-           Contribution to global surface temperature change from other anthropogenic forcings consisting of CO2, CH4, N2O and F-gases relative to 1850–1900
-
-      residual:
-          standard_name: surface_temperature_anomaly
-          long_name: Residual contribution to global mean surface temperature change 
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-
-      other_human_forcing:
-          standard_name: surface_temperature_anomaly
-          long_name: Global mean surface temperature change attributable to other human forcings 
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-          comment: >
-           Contribution to global surface temperature change from other anthropogenic forcings consisting of 
-           aerosol–radiation interaction, aerosol–cloud interaction, black carbon on snow, contrails, ozone, stratospheric H₂O and land use
-           relative to 1850-1900
-            
-      total:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution to global surface temperature change from total 
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-          comment: >
-            Total global surface temperature change including both anthropogenic and natural contributions.
-
-      co2:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from carbon dioxide
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      ch4:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from methane
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      n2o:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from nitrous oxide
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      halogen:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from halogenated gases
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      aerosol_cloud_interactions:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from aerosol-cloud interactions
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      aerosol_radiation_interactions:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from aerosol-radiation interactions
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      bc_snow:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from black carbon on snow and ice
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      land_use:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from land-use changes
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      contrails:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from contrails and contrail-induced cirrus
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      o3:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from ozone
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      h2o_strat:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from stratospheric water vapour
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      solar:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from solar variability
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      volcanic:
-          standard_name: surface_temperature_anomaly
-          long_name: Contribution from volcanic forcing
-          units: "degC"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
           #######
   anthropogenic_warming/Walsh_GMST_rates.csv:
     description:
@@ -650,10 +443,16 @@ files:
       time_coverage_resolution: P10Y
 
     dimensions:
+      - component
       - percentile
       - time
 
     coordinate_description:
+      component:
+        long_name: Temperature attribution
+        coverage_content_type: 'coordinate'
+          # TODO list them all?
+        comment: Attribution of comment to change in temperature (Anthropogenic,)
       percentile:
         long_name: 'percentile'
         units: "1"
@@ -661,124 +460,13 @@ files:
         comment: 'Percentiles of the temperature distribution.'
 
     variable:
-      anthropogenic:
+      GMST:
           long_name: TODO
           units: "degC yr-1"
           units_metadata: "temperature: difference"
           cell_methods: "area: time: mean"
           coverage_content_type: "modelResult"
             
-      natural:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-
-      ghg:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-
-      residual:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-
-      other_human_forcing:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      total:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      co2:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      ch4:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      n2o:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      halogen:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      aerosol_cloud_interactions:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      aerosol_radiation_interactions:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      bc_snow:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      land_use:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      contrails:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      o3:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      h2o_strat:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      solar:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
-      volcanic:
-          long_name: TODO
-          units: "degC yr-1"
-          units_metadata: "temperature: difference"
-          cell_methods: "area: time: mean"
-          coverage_content_type: "modelResult"
           #######
   anthropogenic_warming/assessment_6thIPCC_headlines.csv:
     description:
